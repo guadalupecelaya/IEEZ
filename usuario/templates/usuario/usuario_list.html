@@ -1,0 +1,49 @@
+{% extends 'base1.html' %}
+
+{% block titulo %}
+    Lista de Usuarios
+{% endblock titulo %}
+
+{% block contenido %}
+<h1 class="app-page-title">Lista de Usuarios</h1>
+<hr>
+<a href="{% url 'usuario:nuevo' %}" style="background-color:#0a0a0a" class="btn btn-primary">Nuevo Usuario</a>
+<br>
+<br>
+<div class="app-card app-card-orders-lable shadow-sm mb-s">
+  
+  
+ 
+  <table class="table  table-borderless">
+      <thead class="table-info">
+          <th>Nombre de Usuario</th>
+          
+          
+          
+          <th>Acciones</th>
+      </thead>
+      <tbody>
+          {% for usr in usuario %}
+          <tr>
+                <td>{{usr.username}}</td>
+                
+                <td>
+                    <div lass="btn-group" role="group" aria-label="Basic outlined example">
+                        
+                      <td><div lass="btn-group" role="group" aria-label="Basic outlined example">
+                        <a  href="{% url 'usuario:editar' usr.id %}"  class="btn btn-info" >Editar</a> </td>
+                      <td>
+                          <a  class="btn btn-outline-primary"  href="{% url 'usuario:eliminar' usr.id %}">Eliminar</a>
+                    </div>
+                </td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+</div>
+
+
+
+ 
+  
+{% endblock contenido %}

@@ -1,0 +1,40 @@
+{% extends 'base1.html' %}
+
+
+{% block titulo %}
+    Lista de proveedores
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+
+<h1>Lista de productos registrados</h1>
+
+<hr>
+<a href="{% url 'proveedores:nuevo' %}" class="btn btn-primary">Nuevo Proveedor</a>
+<br>
+<br>
+<table class="table">
+    <thead class="table-dark">
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        
+    </thead>
+    <tbody>
+        {% for proveedor in proveedores  %}
+        <tr>
+            <td>{{proveedor.nombre}}</td>
+            <td>{{proveedor.direccion}}</td>
+            <td>{{proveedor.telefono}}</td>
+            <td></td>
+            <td></td>
+
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock contenido %}

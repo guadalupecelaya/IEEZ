@@ -1,0 +1,47 @@
+{% extends 'base1.html' %}
+
+
+{% block titulo %}
+    Lista de productos
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+
+<h1>Lista de productos adquiridos</h1>
+
+<hr>
+<a href="{% url 'productos:nuevo' %}" class="btn btn-primary">Nuevo Producto</a>
+<br>
+<br>
+<table class="table">
+    <thead class="table-dark">
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Fecha</th>
+        <th>Descripción</th>
+        <th>Proveedor</th>
+        <th>Categoría</th>
+        <th>Acciones</th>
+        
+    </thead>
+    <tbody>
+        {% for producto in productos  %}
+        <tr>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.precio}}</td>
+            <td>{{producto.cantidad}}</td>
+            <td>{{producto.fecha}}</td>
+            <td>{{producto.descripcion}}</td>
+            <td></td>
+            <td></td>
+
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock contenido %}

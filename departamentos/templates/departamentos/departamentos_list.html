@@ -1,0 +1,46 @@
+{% extends 'base1.html' %}
+
+
+{% block titulo %}
+    Lista de productos
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+
+<h1 class="app-page-title">Lista de Departamentos</h1>
+<div class="app-card app-card-orders-lable shadow-sm mb-s" id="tabla-departamentos"></div>
+
+<hr>
+<a href="{% url 'departamentos:nuevo' %}" class="btn btn-primary">Nuevo Departamento</a>
+
+<br>
+<br>
+<table class="table  table-borderless">
+    <thead class="table-dark">
+        <th>Nombre</th>
+    
+
+    <tbody>
+        {% for depto in departamentos  %}
+        <tr>
+            <td>{{depto.nombre}}</td>
+            
+                <div aria-label="Basic outlined example">
+                  <td>
+                    <div lass="btn-group" role="group" aria-label="Basic outlined example">
+                    <a  class="btn btn-outline-primary" method="POST" href="{% url 'departamentos:eliminar' depto.id %}">Eliminar</a>
+                  <td>
+                      
+                </div>
+           
+
+            
+        </tr>
+        {% endfor %}
+    </thead>
+    </tbody>
+</table>
+
+{% endblock contenido %}
