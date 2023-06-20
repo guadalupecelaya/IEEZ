@@ -15,7 +15,7 @@
   
  
   <table class="table  table-borderless">
-      <thead class="table-info">
+      <thead class="table-dark">
           <th>Nombre de Usuario</th>
           
           
@@ -28,12 +28,11 @@
                 <td>{{usr.username}}</td>
                 
                 <td>
-                    <div lass="btn-group" role="group" aria-label="Basic outlined example">
-                        
-                      <td><div lass="btn-group" role="group" aria-label="Basic outlined example">
-                        <a  href="{% url 'usuario:editar' usr.id %}"  class="btn btn-info" >Editar</a> </td>
-                      <td>
-                          <a  class="btn btn-outline-primary"  href="{% url 'usuario:eliminar' usr.id %}">Eliminar</a>
+                    
+                        <div lass="btn-group" role="group" aria-label="Basic outlined example">
+                        <a  href="{% url 'usuario:editar' usr.id %}"  style="background-color:#0a0a0a" class="btn btn-primary" >Editar</a>
+                      
+                        <a href="{% url 'usuario:eliminar' usr.id %}" style="background-color:#0a0a0a" class="btn btn-primary">Eliminar</a>
                     </div>
                 </td>
           </tr>

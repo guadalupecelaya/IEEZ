@@ -8,4 +8,5 @@ class Departamentos(models.Model):
         'nombre',
         max_length=100,
         null=True,
-        blank=True)
+        blank=True,
+        unique=True)

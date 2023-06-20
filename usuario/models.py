@@ -8,4 +8,5 @@ class Usuario(User):
         'RFC',
         max_length=20,
         null=True,
-        blank=True)
+        blank=True,
+        unique=True)

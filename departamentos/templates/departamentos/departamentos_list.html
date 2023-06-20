@@ -13,13 +13,16 @@
 <div class="app-card app-card-orders-lable shadow-sm mb-s" id="tabla-departamentos"></div>
 
 <hr>
-<a href="{% url 'departamentos:nuevo' %}" class="btn btn-primary">Nuevo Departamento</a>
+<a href="{% url 'departamentos:nuevo' %}" style="background-color:#0a0a0a" class="btn btn-primary">Nuevo Departamento</a>
 
 <br>
 <br>
 <table class="table  table-borderless">
     <thead class="table-dark">
         <th>Nombre</th>
+
+
+        <th>Acciones</th>
     
 
     <tbody>
@@ -27,16 +30,11 @@
         <tr>
             <td>{{depto.nombre}}</td>
             
-                <div aria-label="Basic outlined example">
-                  <td>
-                    <div lass="btn-group" role="group" aria-label="Basic outlined example">
-                    <a  class="btn btn-outline-primary" method="POST" href="{% url 'departamentos:eliminar' depto.id %}">Eliminar</a>
-                  <td>
-                      
+            <td>   
+                <div lass="btn-group" role="group" aria-label="Basic outlined example">
+                    <a  method="POST" href="{% url 'departamentos:eliminar' depto.id %}" style="background-color:#0a0a0a" class="btn btn-primary">Eliminar</a>
                 </div>
-           
-
-            
+           </td>
         </tr>
         {% endfor %}
     </thead>
